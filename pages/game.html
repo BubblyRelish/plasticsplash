@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Microplastic Pollution Game</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure CSS is correctly linked -->
+    <link rel="icon" href="fishicon.png" type="image/png">  <!-- If using PNG -->
+
+</head>
+<body onresize="resizeCanvas()" onload="resizeCanvas()">
+    <div id="gameContainer">
+        <!-- Fish selection screen -->
+        <div id="fishSelection">
+            <h2>Select Your Fish</h2>
+            <ul>
+                <li><button onclick="selectFish('Trout')">Trout</button></li>
+                <li><button onclick="selectFish('Salmon')">Salmon</button></li>
+                <li><button onclick="selectFish('Catfish')">Catfish</button></li>
+                <li><button onclick="selectFish('Bass')">Bass</button></li>
+                <li><button onclick="selectFish('Carp')">Carp</button></li>
+            </ul>
+
+            <img src="./fishicon.png"width="250" height="250">
+
+        </div>
+
+        <!-- Game screen, initially hidden -->
+        <div id="gameScreen" style="display: none;">
+            <div id="stats">
+                <p>Health: <span id="health">0</span></p>
+                <p>Energy: <span id="energy">0</span></p>
+                <p>Stress: <span id="stress">0</span></p>
+                <p>Average Life Span: <span id="avgLifeSpan">N/A</span></p>
+                <p>Age: <span id="age">0</span></p>
+                <p>Speed: <span id="speed">0</span></p>
+                <div id="breedingChance">Breeding Chance: 0%</div>
+            </div>
+
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- Virtual Controls in a Cross Pattern -->
+            <div id="controls"> <!-- Ensure this div is correctly placed -->
+                <div id="horizontal-controls"> <!-- Horizontal layout for left and right buttons -->
+                    <button id="leftButton" class="control-button">L</button>
+                    <button id="rightButton" class="control-button">R</button>
+                </div>
+                <button id="upButton" class="control-button">U</button> <!-- Up button -->
+                <button id="downButton" class="control-button">D</button> <!-- Down button -->
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script> <!-- Ensure JavaScript is correctly linked -->
+</body>
+</html>
